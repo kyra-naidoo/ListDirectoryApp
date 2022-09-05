@@ -1,0 +1,96 @@
+<form class="row g-3">
+  <div class="col-auto">
+    <div id="=divLabel">
+     <label for="txtSearch" class="visually-hidden"></label>
+    </div>
+    
+      <input type="text" [(ngModel)]="filePathStr" name="txtSearch" class="form-control" id="txtSearch" placeholder="Enter File Path">
+    
+   
+  </div>
+  <div class="col-auto">
+    <button type="submit" id= "btnSub"class="btn btn-primary mb-3" (click)="searchByPath()">Search</button>
+  </div>
+</form>
+<!--<div>This is my text i am here </div>-->
+<style>
+ #divStat
+{
+color: rgb(26, 24, 24);
+border:4px solid rgb(1, 1, 1);
+background-color:rgb(226, 245, 239);
+margin-left: 22px;
+margin-top: 70px;
+font-size: 25px;
+}
+
+#txtSearch
+{
+  color: rgb(26, 24, 24);
+border:2px solid rgb(14, 14, 14);
+background-color:rgb(251, 247, 253);
+margin-left: 22px;
+margin-top: 20px;
+font-size: 19px;
+}
+
+#btnSub
+{
+color: rgb(26, 24, 24);
+border:2px solid rgb(14, 14, 14);
+background-color:rgb(251, 247, 253);
+margin-left: 22px;
+margin-top: 20px;
+font-size: 19px;
+}
+
+#SubFolder{
+margin-left: 22px;
+
+}
+
+</style>
+<div id="divStat">
+  <p>
+    <b>Full Path:</b><span> {{ resultInfo.FullPath }}</span>
+  </p>
+  <p>
+    <b>Name:</b><span> {{ resultInfo.name }}</span>
+  </p>
+  <p>
+    <b>Size:</b><span> {{ resultInfo.size }} MB</span>
+  </p>
+  <p>
+    <b>Extension:</b><span> {{ resultInfo.exten}}</span>
+  </p>
+  <p>
+    <b>Type:</b><span> {{ resultInfo.type}}</span>
+  </p>
+  <p>
+    <b>Created:</b><span> {{ resultInfo.created }}</span>
+  </p>
+  <p>
+    <b>Access Permissions:</b><span> {{ resultInfo.access}}</span>
+  </p>
+</div>
+ 
+<div id="SubFolder">
+  <p>
+    <b>Sub Folders:</b>
+  </p> 
+
+  <div *ngFor="let child of resultInfo.children">
+      <div class="card" style="width: 100%; margin-top:10px">
+      <div class="card-body">
+
+          <button id="BTNsubfolder" type="submit" class="btn btn-primary mb-3" (click)="searchSecond(child)">{{child}}</button>
+         
+      </div>
+      </div>
+    </div>
+</div>
+<!--<p class="card-text">{{child}} [(ngModel)]="secondStr"</p>
+ <label for="txtSearch" class="visually-hidden">{{child}}</label>
+
+
+-->  
