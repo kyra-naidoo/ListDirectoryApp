@@ -37,4 +37,6 @@ The web app should  be accessible on http://localhost:4200
  input a valid path to a directory in order to obtain its listing information
  It should display its subfolders, clicking on a subfolder, should dispplay stats if its a file, or show a directory listing
  
+ ![Screenshot 2022-09-06 000919](https://user-images.githubusercontent.com/82475191/188516436-b31ea8f3-2312-4a4c-bce1-0af50b5c10cc.jpg)
+ 
 
